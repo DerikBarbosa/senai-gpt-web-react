@@ -80,7 +80,7 @@ h1{
 
 .robo-image {
 
-    background-image: url(../assets/imgs/Sidebar.png);
+    background-image: url("../../assets/imgs/Sidebar.png");
     background-size: contain;
     background-repeat: no-repeat;
     

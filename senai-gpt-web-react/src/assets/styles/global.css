@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.inpt{
+
+    padding: 18px;  /*Espaçamento interno*/
+    border: none; /* remove a borda*/
+    border-radius: 10px;
+    background-color: #F7F9FB; /* define a cor do fundo*/
+    width: 377px;
+    margin-bottom: 16px; } 
+
+.btn {
+        padding: 18px;
+        border-radius: 10px;/*arredonda as bordas*/
+        background-color: #1C1C1C;
+        color: #F7F9FB;
+        gap: 10px; /* Espaçamento entre os botões */
+        width: 377px;/*largura*/           
+        border: none; /*altura*/
+    
+    }
