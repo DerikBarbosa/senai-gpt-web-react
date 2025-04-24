@@ -1,28 +1,26 @@
-import{BrowserRouter, Route, Routes} from "react-router-dom";
-import Login from "./pages/login";
+import Login from "./pages/login"
+import Chat from "./pages/chat"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
 
- return (
-  <>
 
-    <BrowserRouter>
+  return (
+    <>
+      <BrowserRouter>
 
-    <Routes>
+        <Routes>
 
-    <Route path="/" element={<Login/>}></Route>
-    <Route path="/login" element={<Login/>}></Route>
-    <Route path="/chat" element={<login/>}></Route>
-    <Route path="*" element={<h1>Not Found</h1>}></Route>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/login" element={<Login />}></Route >
+          <Route path="/chat" element={<Chat />}></Route >
+          <Route path="*" element={<h1>Not Found</h1>}></Route >
 
-    </Routes>
+        </Routes >
 
-
-    </BrowserRouter>
-    
+      </BrowserRouter >
     </>
-  
   )
 }
 
-export default App;
+export default App
