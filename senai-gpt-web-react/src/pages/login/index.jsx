@@ -2,7 +2,6 @@ import "./login.css";
 import logo from "../../assets/imgs/Chat.png";
 import { useState } from "react";
 
-
 function Login() {
 
   const [email, setEmail] = useState("");
@@ -29,15 +28,13 @@ function Login() {
 
       alert("login realizado com sucesso!")
 
-      console.log(response);
-
       let json = await response.json();
 
       let token = json.accessToken;
 
       console.log("Token: " + token);
 
-      localStorage.setItem("meutoken", token);
+      localStorage.setItem("meuToken", token);
 
       window.location.href = "/chat";
 

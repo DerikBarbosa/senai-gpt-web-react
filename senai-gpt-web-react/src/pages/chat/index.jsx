@@ -1,7 +1,6 @@
+
 import "./chat.css"
 import btn from "../../assets/imgs/IconSet (1).svg";
-import btnc from "../../assets/imgs/IconSet (1).svg";
-import btnchat from "../../assets/imgs/IconSet (1).svg";
 import logo from "../../assets/imgs/Chat.png";
 import exemplos from "../../assets/imgs/IconSet (3).svg";
 import exempless from "../../assets/imgs/Star.svg";
@@ -13,7 +12,9 @@ import { useEffect, useState } from "react";
 function Chat() {
 
     const [chats, setChats] = useState([]);
+    const [chatSelecionado, setChatSelecionado] = useState(null);
    
+
    useEffect (() => {
 
     getChats();
@@ -22,9 +23,9 @@ function Chat() {
 
    const getChats = async() => {
 
-    let response = await fetch ("https://senai-gpt-api.azurewebsite.net/chats", { 
+    let response = await fetch ("https://senai-gpt-api.azurewebsites.net/chats", { 
         headers: {
-                    "authorization" : "bearer" + localStorage.getItem("meuToken")
+                    "Authorization" : "Bearer " + localStorage.getItem("meuToken")
     } 
 
     });
@@ -32,15 +33,17 @@ function Chat() {
     console.log(response); 
 
         if (response.ok == true ) {
+
             let json = await response.json();
 
             setChats(json);
 
-    }else {
+    } else {
 
         if (response.status == 401) { 
 
             alert ("token invalido. Faça login novamente.");
+            localStorage.clear();
             window.location.href = "/login";
 
         
@@ -49,6 +52,21 @@ function Chat() {
         }
 
    }
+
+   const onLogOutClick = () => {
+
+    localStorage.clear();
+    window.location.href = "/login";
+
+   }
+
+   const clickChat = (chat) => {
+
+    setChatSelecionado(chat);
+    console.log(chat);
+
+   }
+
 
    return (<div className="container">
 
@@ -60,7 +78,7 @@ function Chat() {
                     <button className="btn-new-chat"> + New Chat </button>
 
                     {chats.map (chat => (
-                    <button className="btn-chat">
+                    <button className="btn-chat" onClick={() => clickChat (chat)}>
                         <img src={btn} alt="" /> 
                     {chat.chatTitle}
                     </button>
@@ -74,13 +92,28 @@ function Chat() {
                     <button className="btn-bx"> Light mode </button>
                     <button className="btn-bx"> My Account </button>
                     <button className="btn-bx"> Updates & FAQ </button>
-                    <button className="btn-bx"> Log out </button>
+                    <button className="btn-bx" onClick={() => onLogOutClick()}> Log out </button>
 
                 </div>
 
             </header>
 
             <main className="painel-central">
+
+                {chatSelecionado == null && (
+
+                    <>
+                    
+                    
+                <div className="dicas-container">
+                    
+                </div>
+                    
+                    
+                    
+                    </>
+
+                )}
 
                 <img className="logo" src={logo} alt="" />
 
