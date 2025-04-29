@@ -5,33 +5,34 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: "Inter";
 
 }
 
 .inpt {
 
-    padding: 18px;
-    /* espaçamento interno */
-    border: none;
-    /* remove borda */
-    background-color: #F7F9FB;
-    /* coloca cor */
-    border-radius: 10px;
-    width: 377px;
+    border-radius: 10px; /* Arredonda as bordas */
+    padding: 18px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Remove a borda */
+    background-color: #F7F9FB; /* Define a cor do fundo */
+    width: 377px; /*largura*/
     margin-bottom: 16px;
+
 }
 
 .btn {
 
+    padding: 18px;
     background-color: black;
     color: white;
-    border-radius: 10px;
-    /*arredonda as bordas*/
-    border: none;
-    /*altura*/
-    width: 377px;
-    /*largura*/
-    height: 50px;
+    border: none; /*altura*/
+    width: 377px; /*largura*/
+    border-radius: 10px; /* Arredonda as bordas */
+    
+}
 
+button {
+
+    cursor: pointer;
 
 }
