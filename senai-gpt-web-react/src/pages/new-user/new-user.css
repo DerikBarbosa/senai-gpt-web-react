@@ -45,8 +45,7 @@ h1 {
 .robo-image {
 
   background-image: url("../../assets/imgs/robo.png");
-  background-size: 175%;
-  background-position: 0% 81%;
+  background-size: cover;
   /* background-repeat: no-repeat; */
 
   width: 50vw;

@@ -17,7 +17,7 @@ function Chat() {
     }, []);
 
     const getChats = async () => {
-        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+        let response = await fetch("https://senai-gpt-api.up.railway.app/users", {
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("meuToken")
             }
@@ -42,11 +42,12 @@ function Chat() {
         setChatSelecionado(chat);
     };
 
+
     const deletarChat = async (chatId) => {
         const confirmacao = window.confirm("Deseja realmente excluir este chat?");
         if (!confirmacao) return;
 
-        let response = await fetch(`https://senai-gpt-api.azurewebsites.net/chats/${chatId}`, {
+        let response = await fetch(`https://senai-gpt-api.up.railway.app/users${chatId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -62,6 +63,9 @@ function Chat() {
     };
 
     const chatGPT = async (message) => {
+
+            return "[Mensagem fixa]";
+
         const endpoint = "https://ai-testenpl826117277026.openai.azure.com/";
         const apiKey = "DCYQGY3kPmZXr0lh7xeCSEOQ5oiy1aMlN1GeEQd5G5cXjuLWorWOJQQJ99BCACYeBjFXJ3w3AAAAACOGol8N";
         const deploymentId = "gpt-4";
@@ -120,8 +124,7 @@ function Chat() {
         novoChatSelecionado.messages.push(novaRespostaChatGPT);
         setChatSelecionado({ ...novoChatSelecionado });
 
-        let response = await fetch(
-            `https://senai-gpt-api.azurewebsites.net/chats/${chatAtual.id}`,
+        let response = await fetch(`https://senai-gpt-api.up.railway.app/users${chatAtual.id}`,
             {
                 method: "PUT",
                 headers: {
@@ -160,7 +163,7 @@ function Chat() {
         setChatSelecionado(novoChatObj);
         setUserMessage("");
 
-        let response = await fetch("https://senai-gpt-api.azurewebsites.net/chats", {
+        let response = await fetch("https://senai-gpt-api.up.railway.app/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -196,7 +199,7 @@ function Chat() {
                             onClick={async () => {
                                 if (chatSelecionado) {
                                     await deletarChat(chatSelecionado.id);
-                                    setChatSelecionado(null); // redireciona visualmente
+                                    setChatSelecionado(null); 
                                 } else {
                                     alert("Nenhum chat selecionado.");
                                 }
