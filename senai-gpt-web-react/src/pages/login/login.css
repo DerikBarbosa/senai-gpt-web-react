@@ -45,11 +45,39 @@ h1 {
 .robo-image {
 
   background-image: url("../../assets/imgs/robo.png");
-  background-size: 175%;
-  background-position: 0% 81%;
+  background-size: cover;
+  
   /* background-repeat: no-repeat; */
 
   width: 50vw;
   height: 100vh;
+
+}
+@media screen and (max-width: 1366px) {
+
+  /* Desktop pequeno */
+  
+}
+@media screen and (max-width: 1000px) {
+
+  /* Tablet */
+  
+}
+@media screen and (max-width: 768px) {
+
+  /* Celular */
+  
+
+.robo-image{
+
+  display: none;
+
+}
+.login-container{
+
+  width: 200vw !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../assets/imgs/robo.png");
+  background-size: cover;
+}
 
 }

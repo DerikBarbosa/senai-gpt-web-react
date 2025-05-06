@@ -11,6 +11,8 @@ function Chat() {
     const [chats, setChats] = useState([]);
     const [chatSelecionado, setChatSelecionado] = useState(null);
     const [userMessage, setUserMessage] = useState("");
+    
+    const [isLeftPanelOpen, setIsLeftPanelOpen] = useState(false);
 
     useEffect(() => {
         getChats();
@@ -178,12 +180,27 @@ function Chat() {
         } else {
             console.log("Erro ao criar o chat.");
         }
-    };
+    }
+
+}
+
+
+
+const toggleLeftPanel = () => {
+    setIsLeftPanelOpen(!isLeftPanelOpen);
+}
+
+
 
     return (
         <>
             <div className="container">
-                <header className="left-panel">
+                <button className="btn-toggle-panel"
+                    onClick={() => setIsLeftPanelOpen(true)}
+                >
+                    ☰
+                </button>
+                <header className={`left-panel  ${isLeftPanelOpen  ? "open" : ""}`}>
                     <div className="top">
                         <button className="btn-new-chat" onClick={() => novoChat()}>+ New chat</button>
                         {chats.map(chat => (

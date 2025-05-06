@@ -1,5 +1,5 @@
 import "./new-user.css";
-import logo from "../../assets/imgs/robo.png";
+import logo from "../../assets/imgs/chat (3).png";
 import { useState } from "react";
 
 function NewUser() {
