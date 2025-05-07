@@ -214,7 +214,10 @@
 
 }
 
-@media  screen and (max-width: 768px) {
+@media  screen and (max-width: 768px) 
+
+{}
+
   
 .left-panel{
 
@@ -256,6 +259,55 @@ bottom: 120px;
 font-size: 25px;
 
 background-color: white;
+
+.left-panel.open {
+
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.chat-logo img {
+
+  width: 75vw;
+
+}
+
+
+.central-panel .dicas-container {
+
+  display: flex;
+  max-width: 78vw;
+  margin-top: 20px;
+
+}
+
+.input-container-1 {
+
+  margin-top: auto;
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+
+  border: none;
+  background-color: #F7F9FB;
+
+  border-radius: 16px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+} 
+
+.input-container-1 input {
+
+  border: none;
+  padding: 20px;
+  background-color: transparent;
+  width: 60vw;
 
 }
 

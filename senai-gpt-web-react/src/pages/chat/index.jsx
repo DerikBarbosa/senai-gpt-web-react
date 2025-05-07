@@ -180,27 +180,20 @@ function Chat() {
         } else {
             console.log("Erro ao criar o chat.");
         }
-    }
-
-}
-
-
-
-const toggleLeftPanel = () => {
-    setIsLeftPanelOpen(!isLeftPanelOpen);
-}
-
+    };
 
 
     return (
         <>
             <div className="container">
-                <button className="btn-toggle-panel"
+                
+                <button 
+                    className="btn-toggle-panel"
                     onClick={() => setIsLeftPanelOpen(true)}
                 >
                     ☰
                 </button>
-                <header className={`left-panel  ${isLeftPanelOpen  ? "open" : ""}`}>
+                <header className={`left-panel ${isLeftPanelOpen == true ? "open" : ""}`}>
                     <div className="top">
                         <button className="btn-new-chat" onClick={() => novoChat()}>+ New chat</button>
                         {chats.map(chat => (

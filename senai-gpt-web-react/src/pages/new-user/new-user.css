@@ -1,81 +1,98 @@
-/* .titulo {
-
-    font-size: 76px;
-
-} */
-
-/* #meutitulo {
-
-    font-size: 76px;
-
-} */
-
 .page-container {
-
   display: flex;
-
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-h1 {
-
-  font-size: 76px;
-  font-family: "Inter";
-  font-weight: normal;
-  margin-bottom: 16px;
-
+/* Lado visual com imagem do robô */
+.robo-image {
+  background-image: url("../../assets/imgs/robo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50vw;
+  height: 100vh;
 }
 
+/* Container do formulário */
 .new-user-container {
-
   display: flex;
-  flex-direction: column; /*deixa em colunas*/
-  align-items: center; /*horizontal*/
-  justify-content: center; /*horizontal*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   width: 50vw;
-
+  background-color: #ffffff;
+  padding: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  border-radius: 0;
 }
 
 .new-user-logo {
-
   height: 60px;
-
+  margin-bottom: 24px;
 }
 
-.up-image {
-
-  background-image: url(/src/assets/imgs/robo.png);
-  background-size: cover;
-  
-  width: 50vw;
-  height: 100vh;
-
+h1.titulo {
+  font-size: 56px;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  margin-bottom: 24px;
 }
-@media screen and (max-width: 1366px) {
 
-  /* Desktop pequeno */
-  
+.inpt {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
-@media screen and (max-width: 1000px) {
 
-  /* Tablet */
-  
+.btn {
+  width: 100%;
+  max-width: 400px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: 6px;
 }
+
+.form-hint {
+  margin-top: 16px;
+  font-size: 14px;
+  text-decoration: underline;
+  color: #444;
+}
+
+/* Responsividade */
 @media screen and (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-  /* Celular */
-  
+  .robo-image {
+    display: none;
+  }
 
-.robo-image{
+  .new-user-container {
+    width: 90vw;
+    height: auto;
+    padding: 20px;
+    box-shadow: none;
+  }
 
-  display: none;
-
-}
-.login-container{
-
-  width: 100vw;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../../assets/imgs/robo.png");
-  background-size: cover;
-}
-
+  h1.titulo {
+    font-size: 32px;
+    text-align: center;
+  }
 }
